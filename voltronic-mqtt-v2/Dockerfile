@@ -10,8 +10,6 @@ WORKDIR /opt
 COPY sources/ /opt/
 COPY run.sh /
 
-RUN chmod a+x /run.sh
-
 RUN cd /opt/inverter-cli && mkdir bin && cmake . && make && mv inverter_poller bin/
 
 HEALTHCHECK \
@@ -20,5 +18,9 @@ HEALTHCHECK \
     --start-period=1m \
     --retries=3 \
   CMD /opt/healthcheck
+
+RUN chmod a+x /run.sh
+RUN chmod a+x -R /opt/inverter-mqtt
+RUN chmod a+x -R /opt/healthcheck
 
 CMD [ "/run.sh" ]
