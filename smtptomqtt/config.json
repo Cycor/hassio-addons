@@ -1,0 +1,28 @@
+{
+  "name": "smtptomqtt",
+  "version": "1",
+  "slug": "smtptomqtt",
+  "description": "Receive emails and publish to MQTT",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "options": {
+    "MqttHost": "localhost",
+    "MqttPort": 1883,
+    "MqttUsername": "",
+    "MqttPassword": "",
+	"MqttTopic": "smtptomqtt",
+	"Debug": "False"
+  },
+  "schema": {
+    "MqttHost": "str",
+    "MqttPort": "port",
+    "MqttUsername": "str?",
+    "MqttPassword": "password?",
+	"MqttTopic": "str",
+	"Debug": "str"
+  },
+  "ports": {
+    "1025/tcp": 1025
+  }
+}

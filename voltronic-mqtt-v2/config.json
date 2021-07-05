@@ -1,0 +1,36 @@
+{
+  "name": "voltronic-mqtt-v2",
+  "version": "0.12",
+  "slug": "voltronic-mqtt-v2",
+  "description": "Voltronic Mqtt v2",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "privileged": ["SYS_ADMIN", "SYS_RAWIO"],
+  "full_access": true,
+  "advanced": true,
+  "options": {
+    "InverterPort": "/dev/hidraw0",
+    "InverterManufacturer": "SPC",
+    "InverterName": "Xpert MKS 2K",
+    "MqttHost": "localhost",
+    "MqttPort": 1883,
+    "MqttUsername": "",
+    "MqttPassword": "",
+    "MqttTopic": "inverter",
+    "haTopic": "homeassistant",
+    "debug": false
+  },
+  "schema": {
+    "InverterPort": "str",
+    "InverterManufacturer": "str",
+    "InverterName": "str",
+    "MqttHost": "str",
+    "MqttPort": "port",
+    "MqttUsername": "str?",
+    "MqttPassword": "password?",
+    "MqttTopic": "str",
+    "haTopic": "str",
+    "debug": "bool"
+  }
+}

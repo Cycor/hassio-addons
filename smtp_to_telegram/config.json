@@ -1,0 +1,20 @@
+{
+  "name": "smtp_to_telegram",
+  "version": "1",
+  "slug": "smtp_to_telegram",
+  "description": "listens for SMTP and sends all incoming Email messages to Telegram",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "options": {
+    "ST_TELEGRAM_CHAT_IDS": "",
+    "ST_TELEGRAM_BOT_TOKEN": ""
+  },
+  "schema": {
+    "ST_TELEGRAM_CHAT_IDS": "str",
+    "ST_TELEGRAM_BOT_TOKEN": "str"
+  },
+  "ports": {
+    "2525/tcp": 2525
+  }
+}
