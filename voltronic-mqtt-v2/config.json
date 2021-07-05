@@ -1,6 +1,6 @@
 {
   "name": "voltronic-mqtt-v2",
-  "version": "0.12",
+  "version": "0.13",
   "slug": "voltronic-mqtt-v2",
   "description": "Voltronic Mqtt v2",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
