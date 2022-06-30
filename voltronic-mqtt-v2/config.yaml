@@ -1,6 +1,6 @@
-name: voltronic-mqtt-v2-test
-version: '0.14'
-slug: voltronic-mqtt-v2-test
+name: voltronic-mqtt-v2
+version: '0.14.1'
+slug: voltronic-mqtt-v2
 description: Voltronic Mqtt v2
 arch:
   - aarch64
