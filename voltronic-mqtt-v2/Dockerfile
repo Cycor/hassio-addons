@@ -1,16 +1,20 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ENV LANG C.UTF-8
+ENV \
+    LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
 
-RUN apk add --no-cache curl git build-base gcc wget cmake jq mosquitto-clients make python3 py3-pip && pip3 install mpp-solar
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+RUN apk add --no-cache mosquitto-clients py3-pip && pip3 install mpp-solar paho-mqtt
 
 WORKDIR /opt
 
 COPY sources/ /opt/
 COPY run.sh /
-
-RUN cd /opt/inverter-cli && mkdir bin && cmake . && make && mv inverter_poller bin/
 
 HEALTHCHECK \
     --interval=30s \
@@ -20,7 +24,6 @@ HEALTHCHECK \
   CMD /opt/healthcheck
 
 RUN chmod a+x /run.sh
-RUN chmod a+x -R /opt/inverter-mqtt
-RUN chmod a+x -R /opt/healthcheck
+RUN chmod a+x -R /opt
 
 CMD [ "/run.sh" ]

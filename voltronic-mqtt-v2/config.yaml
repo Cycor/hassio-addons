@@ -1,0 +1,42 @@
+name: voltronic-mqtt-v2-test
+version: '0.14'
+slug: voltronic-mqtt-v2-test
+description: Voltronic Mqtt v2
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: application
+privileged:
+- SYS_ADMIN
+- SYS_RAWIO
+full_access: true
+advanced: true
+init: false
+hassio_api: true
+hassio_role: manager
+homeassistant_api: true
+options:
+  InverterPort: "/dev/hidraw0"
+  InverterManufacturer: SPC
+  InverterName: Xpert MKS 2K
+  MqttHost: localhost
+  MqttPort: 1883
+  MqttUsername: ''
+  MqttPassword: ''
+  MqttTopic: inverter
+  haTopic: homeassistant
+  debug: false
+schema:
+  InverterPort: str
+  InverterManufacturer: str
+  InverterName: str
+  MqttHost: str
+  MqttPort: port
+  MqttUsername: str?
+  MqttPassword: password?
+  MqttTopic: str
+  haTopic: str
+  debug: bool

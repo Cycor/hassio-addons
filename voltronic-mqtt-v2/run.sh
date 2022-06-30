@@ -26,8 +26,5 @@ echo "MQTT_PASSWORD=$MQTT_PASSWORD"
 echo "MQTT_HATOPIC=$MQTT_HATOPIC"
 echo "DEBUG=$DEBUG"
 
-cp /opt/inverter-cli/inverter.conf /opt/inverter-cli/bin/inverter.conf
-sed -i "s/^\(device=\).*/\1${INV_PORT//\//\\/}/" /opt/inverter-cli/bin/inverter.conf
-
 cd /opt
-/opt/inverter-mqtt/entrypoint.sh
+/opt/entrypoint.sh
