@@ -6,6 +6,7 @@
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
   "boot": "auto",
+  "init": false,
   "options": {
     "ST_TELEGRAM_CHAT_IDS": "",
     "ST_TELEGRAM_BOT_TOKEN": ""
