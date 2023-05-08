@@ -135,7 +135,6 @@ def publish_ha_sensor(topic, cleaned_up_name, value_template, unit_of_measuremen
 
     json_data = {
         "name": f"{config_json['InverterName']} {cleaned_up_name}",
-        "unit_of_measurement": unit_of_measurement,
         "state_topic": f"{config_json['MqttTopic']}/{inverter_devicename_cleaned}/{topic}",
         "value_template": "{{" + value_template + "}}",
         "icon": f"mdi:{icon}",
@@ -145,6 +144,9 @@ def publish_ha_sensor(topic, cleaned_up_name, value_template, unit_of_measuremen
             "payload_not_available": "offline"
         }
     }
+
+    if unit_of_measurement:
+        json_data["unit_of_measurement"] = unit_of_measurement
 
     if payload_on:
         json_data["payload_on"] = payload_on
