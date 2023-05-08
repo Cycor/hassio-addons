@@ -1,5 +1,5 @@
 name: voltronic-mqtt-v2
-version: '0.14.1'
+version: '0.15.0'
 slug: voltronic-mqtt-v2
 description: Voltronic Mqtt v2
 arch:
